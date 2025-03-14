@@ -44,17 +44,17 @@ body {
   margin: 0 auto;
 }
 
-.profile-photo {
+.profile-photo img{
   width: 2.7rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.img {
+/*.img {
   display: block;
   width: 100%;
-}
+}*/
 
 .btn {
   display: inline-block;
@@ -316,7 +316,15 @@ main .container .left .profile {
 .middle .stories .story::before {
   content: "";
   display: block;
-  
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 75));
+  position: absolute;
+  bottom: 0;
+}
+
+.middle .stories .story .name {
+  z-index: 2;
 }
 
 
@@ -345,3 +353,91 @@ no-repeat center center/cover;
 background: url('./images/story-6.jpg')
 no-repeat center center/cover;
 }
+
+/*.middle .stories {
+  display: flex;
+  justify-content: space-around;
+  height: 12rem;
+  gap: 0.5rem;
+  background: red;
+  padding: 1rem;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.story .profile-photo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.story .profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story .name {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+.middle .stories .story:nth-child(1) {
+  background: url('./images/story-1.jpg')
+  no-repeat center center/cover;
+  }
+  .middle .stories .story:nth-child(2) {
+  background: url('./images/story-2.jpg')
+  no-repeat center center/cover;
+  }
+  .middle .stories .story:nth-child(3) {
+  background: url('./images/story-3.jpg')
+  no-repeat center center/cover;
+  }
+  .middle .stories .story:nth-child(4) {
+  background: url('./images/story-4.jpg')
+  no-repeat center center/cover;
+  }
+  .middle .stories .story:nth-child(5) {
+  background: url('./images/story-5.jpg')
+  no-repeat center center/cover;
+  }
+  .middle .stories .story:nth-child(6) {
+  background: url('./images/story-6.jpg')
+  no-repeat center center/cover;
+  }*/
+
+  .middle .story .profile-photo img{
+    width: 2rem;
+    height: 2rem;
+    align-self: start;
+    border: 2px solid var(--color-primary);
+  }
+/* --------------CREATE POST -----------*/
+  .middle .create-post {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: 0.4rem var(--card-padding);
+    border-radius: var(--border-radius);
+  }
+  .middle .create-post input[type="text"] {
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: 1rem;
+    color: var(--color-dark);
+    margin-right: 1rem;
+  }
