@@ -18,7 +18,6 @@
   --card-padding: 1rem;
 
   --sticky-top-left: 5.4rem;
-  /* Adjusted sticky value for right sidebar */
   --sticky-top-right: -18rem;
 }
 
@@ -45,18 +44,17 @@ body {
   margin: 0 auto;
 }
 
-.profile-photo img {
+.profile-photo {
   width: 2.7rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
 }
 
-/* Uncomment if needed
-.img {
+ .img {
   display: block;
   width: 100%;
-}*/
+ }
 
 .btn {
   display: inline-block;
@@ -93,42 +91,26 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 nav .container {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 1;
 }
 
 nav .search-bar {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  max-width: 300px;
-  width: 50%;
-}
-.search-bar {
   background: var(--color-light);
   border-radius: var(--border-radius);
   padding: var(--search-padding);
 }
 
-.search-bar input[type="search"] {
+nav .search-bar input[type="search"]{
   background: transparent;
-  width: 100%;
+  width: 30vw;
   margin-left: 1rem;
   font-size: 0.9rem;
   color: var(--color-dark);
-  border: none;
-  outline: none;
 }
 
 nav .search-bar input[type="search"]::placeholder {
@@ -141,31 +123,6 @@ nav .create {
   gap: 2rem;
 }
 
-/*@media screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.7rem 1rem;
-  }
-
-  nav .container,
-  nav .create {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  nav .search-bar {
-    position: relative; /* Remove absolute positioning */
-    left: 0;
-    transform: none;
-    width: 100%;
-    margin-top: 1rem;
-    max-width: none; /* Remove max-width if needed */
-  }
-}*/
-
 /* =================== MAIN =================== */
 main {
   position: relative;
@@ -173,13 +130,10 @@ main {
 }
 
 main .container {
-  width: 100%;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 18vw auto 20vw;
   column-gap: 2rem;
   position: relative;
-  height: 100vh; /* Ensures the container has height */  
 }
 
 /* ================ LEFT =============== */
@@ -201,7 +155,6 @@ main .container .left .profile {
 
 /* ------------------- SIDEBAR -------------- */
 .left .sidebar {
-  position: relative;
   margin-top: 1rem;
   background: var(--color-white);
   border-radius: var(--card-border-radius);
@@ -339,7 +292,7 @@ main .container .left .profile {
 
 .middle .stories .story::before {
   content: "";
-  display: block;
+  display: block;  
   width: 100%;
   height: 5rem;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
@@ -371,7 +324,7 @@ main .container .left .profile {
 }
 
 /* Specific styling for story profile photos */
-.middle .stories .story .profile-photo img {
+.middle .story .profile-photo {
   width: 2rem;
   height: 2rem;
   align-self: start;
@@ -400,17 +353,6 @@ main .container .left .profile {
 }
 
 /* -------------- FEEDS ----------- */
-/* kn
-@media screen and (max-width: 768px) {
-  main .container {
-    grid-template-columns: 1fr; 
-  }
-  .right {
-    position: static; 
-    margin-top: 2rem;
-  }
-}*/
-
 .middle .feeds .feed {
   background: var(--color-white);
   border-radius: var(--card-border-radius);
@@ -423,13 +365,11 @@ main .container .left .profile {
 .middle .feeds .head {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .middle .feeds .user {
   display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .middle .feed .photo {
@@ -453,7 +393,7 @@ main .container .left .profile {
 .middle .liked-by span {
   width: 1.4rem;
   height: 1.4rem;
-  display: inline-block;
+  display: flex;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--color-white);
@@ -470,11 +410,9 @@ main .container .left .profile {
 
 /* -------------- RIGHT SIDEBAR ----------- */
 main .container .right {
-  height: auto;
   position: sticky;
   top: var(--sticky-top-right);
   bottom: 0;
-  min-width: 200px;
 }
 .right .messages {
   background: var(--color-white);
@@ -733,7 +671,7 @@ font-size: 0.85rem;
   }
   main .container {
     grid-template-columns: 0 auto 5rem;
-    gap: 0;
+    gap: 0 ;
   }
   main .container .left{
     grid-column: 3/4;
